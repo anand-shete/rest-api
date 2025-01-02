@@ -2,7 +2,6 @@
 
 This is a REST API for managing user data, built using **Node.js** with **Express.js**. It supports CRUD (Create, Read, Update, Delete) operations for user management.
 
----
 
 ## Features
 - **GET**: Fetch user data
@@ -10,13 +9,11 @@ This is a REST API for managing user data, built using **Node.js** with **Expres
 - **PUT**: Update user information
 - **DELETE**: Remove users
 
----
 
 ## Tech Stack
 - **Framework**: Node.js with Express.js
 - **Database**: MongoDB 
 
----
 
 ## Installation
 
@@ -43,7 +40,6 @@ This is a REST API for managing user data, built using **Node.js** with **Expres
     npm run dev
     ```
 
----
 
 ## API Endpoints
 
@@ -69,7 +65,6 @@ http://localhost:3000/api
 #### 5. **Delete User**
 - **DELETE** `/:id`
 
----
 
 ## Folder Structure
 ```
