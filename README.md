@@ -12,7 +12,8 @@ This is a REST API for managing user data, built using **Node.js** with **Expres
 
 ## Tech Stack
 - **Framework**: Node.js with Express.js
-- **Database**: MongoDB 
+- **Database**: MongoDB
+- **Password Hashing**: Bcrypt 
 
 
 ## Installation
