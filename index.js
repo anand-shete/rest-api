@@ -1,18 +1,19 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const app = express();
-const port = 8000;
+const PORT = process.env.PORT || 8000;
 
-const connectMongoDb  = require('./connection/connect')
+const connectDB = require('./config/db')
 const userRouter = require('./routes/user')
 const logReqRes = require("./middlewares")    // By deafult chooses index.js    
 
-connectMongoDb('mongodb://localhost:27017/REST_api');
+connectDB(process.env.MONGO_URL);
 
 app.use(logReqRes('user-log.txt'));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));       // middleware to parse form data
 
-app.use('/user',userRouter);
+app.use('/api', userRouter);
 
-app.listen(port, () => {
-    console.log(`Server started on port:${port}`);
-})
+app.listen(PORT, () => console.log(`Server started on PORT:${PORT}`))

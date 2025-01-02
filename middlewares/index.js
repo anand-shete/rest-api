@@ -1,7 +1,7 @@
 const fs = require('fs');
 const moment = require('moment');;
 
-logReqRes = (filename) => {
+module.exports = logReqRes = (filename) => {
     return (req, res, next) => {
         const date = new moment();
         let ip = req.ip;
@@ -14,4 +14,3 @@ logReqRes = (filename) => {
         next();
     }
 }
-module.exports = logReqRes; 

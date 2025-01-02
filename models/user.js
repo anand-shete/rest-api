@@ -1,19 +1,19 @@
-const mongoose = require('mongoose')
-const userschema = new mongoose.Schema(
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const userSchema = new mongoose.Schema(
     {
-        firstName: {
+        name: {
             type: String,
             required: true,
         },
-        lastName: {
-            type: String,
-        },
         email: {
             type: String,
+            required: true,
             unique: true,
         },
-        jobTitle: {
-            type: String
+        password: {
+            type: String,
+            required: true
         },
         gender: {
             type: String
@@ -22,6 +22,11 @@ const userschema = new mongoose.Schema(
     { timestamps: true }
 );
 
-const User = mongoose.model('user', userschema);
+userSchema.pre('save', async function () {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = bcrypt.hashSync(this.password, salt);
+    this.password = hashedPassword;
+})
 
+const User = mongoose.model('user', userSchema);
 module.exports = User;
