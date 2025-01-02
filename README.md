@@ -38,7 +38,7 @@ This is a REST API for managing user data, built using **Node.js** with **Expres
 
 4. Start the server:
     ```bash
-    npm run dev
+    npm run start
     ```
 
 
@@ -65,24 +65,6 @@ http://localhost:3000/api
 
 #### 5. **Delete User**
 - **DELETE** `/:id`
-
-
-## Folder Structure
-```
-project-name/
-|
-|-- src/
-|   |-- controllers/
-|   |-- models/
-|   |-- routes/
-|   |-- services/
-|
-|-- .env
-|-- package.json
-|-- README.md
-```
-
----
 
 ## Contribution
 Feel free to fork this repository and contribute via pull requests. Any suggestions or bug reports are welcome!
